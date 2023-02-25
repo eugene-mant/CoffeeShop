@@ -1,0 +1,52 @@
+html {
+	font-family: Calibri, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+    font-weight: 100;
+    line-height: 1;
+}
+html, body {
+	overflow: hidden;
+    height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#app {
+    height: 100%;
+    width: 100%;
+	overflow: auto;
+
+    background-color: #ffffff;
+	background-image: url("https://www.transparenttextures.com/patterns/exclusive-paper.png");
+}
+
+
+// tmp
+a {
+    text-decoration: none;
+}
+.u-circle {
+    display: block;
+    border-radius: 50%;
+}
+.u-radius {
+    border-radius: 1rem;
+}
+.u-block {
+    background: #888;
+}
+.u-btn {
+    padding: 1em;
+    border: 1px solid black;
+    border-radius: 1rem;
+    color: black;
+}
+
+.v-box {
+    display: flex;
+    flex-direction: column;
+}
+.h-box {
+    display: flex;
+    flex-direction: row;
+}

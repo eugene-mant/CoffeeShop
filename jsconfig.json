@@ -1,0 +1,10 @@
+{
+    "exclude": ["node_modules", "local_modules", "dist"],
+    "compilerOptions": {
+        "module": "esnext",
+        "baseUrl": "./",
+        "paths": {
+            "~/*": ["src/*"]
+        }
+    }
+}

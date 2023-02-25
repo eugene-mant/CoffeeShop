@@ -1,0 +1,32 @@
+{
+    "name": "coffee-shop",
+    "version": "0.0.1",
+    "description": "A demo project with VueJS and Vite",
+    "keywords": [
+        "ES6+",
+        "Vue",
+        "Vite"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/eugene-mant/CoffeeShop.git"
+    },
+    "scripts": {
+        "dev": "vite",
+        "start": "vite",
+        "build": "vite build"
+    },
+    "dependencies": {
+        "normalize-scss": "^7.0.1",
+        "vue": "^3.2.13",
+        "vue-router": "^4.0.3",
+        "vuex": "^4.0.0"
+    },
+    "devDependencies": {
+        "vite": "^2.9.15",
+        "@vue/compiler-sfc": "^3.2.13",
+        "@vitejs/plugin-vue": "^1.2.2",
+        "sass": "^1.32.7",
+        "sass-loader": "^12.0.0"
+    }
+}

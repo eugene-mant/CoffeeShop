@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CoffeeShop</title>
+    </head>
+    <body>
+        <div id="app"></div>
+        <script type="module">
+            import '~/index.js';
+        </script>
+
+        <!-- 
+	    Поки так. В dev моді, Vite не розпізнає аліас:
+		<script type="module" src="~/index.js"></script>
+		
+		і намагається знайти:
+		GET http://localhost:3000/~/index.js net::ERR_ABORTED 404 (Not Found)
+	    -->
+    </body>
+</html>
