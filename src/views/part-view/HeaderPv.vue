@@ -7,7 +7,9 @@
 		.app-logo {
 			min-width: 3rem;
 			min-height: 3rem;
-			background: #aaa;
+			background: none;
+			width: 100px;
+			height: 100px;
 		}
 		.main-nav {
 			margin: auto;
@@ -22,15 +24,22 @@
 			margin-top: auto;
 			margin-bottom: auto;
 		}
+		.logo
+		{
+			width: 100px;
+			height: 100px;
+
+		}
 	}
 </styles>
 
 <template>
     <header class="header-pv h-box">
-        <router-link class="app-logo u-circle" to="/"></router-link>
+		<img class="app-logo" src="https://images.vexels.com/media/users/3/149532/isolated/preview/7ecd44f018ccc3e0bfe0c5f22b925a29-coffee-shop-take-away-badge.png" alt="">
+       
         <app-nav />
         <div class="h-box">
-            <div class="btn u-circle"></div>
+            <div class="btn u-circle"></div>	
             <div class="btn u-circle"></div>
             <div class="btn u-circle"></div>
         </div>
