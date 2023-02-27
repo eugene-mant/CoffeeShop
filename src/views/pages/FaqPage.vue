@@ -126,7 +126,7 @@ body {
     <div class="page">
 		<app-header />
         <div class="container">
-  <h1>FAQ</h1>
+  <h1>{{title}}</h1>
 
   <div class="accordion">
     <div class="accordion-item" v-for="(faq, index) in faqs" :key="index">
@@ -150,47 +150,28 @@ body {
 import HeaderPv from '~/views/part-view/HeaderPv.vue';
 import FooterPv from '~/views/part-view/FooterPv.vue';
 
+import questionsArr from '~/static/data/pages/faq.json';
+/*
+// можна забрати зі статичних даних непотрібні поля
+// додаємо властивість active для логіки тут:
+questionsArr.forEach(i => i.active = false);
+*/
+
 export default {
 	name: 'FaqPage',
-    data: () => ({
-        title: 'Faq' 
-    })
-    ,
-    components: {
-		AppHeader: HeaderPv,
-        AppFooter: FooterPv
-	},
-    data(){
-         return {
-      faqs: [
-        {
-          question: "Які види кави ви пропонуєте?",
-          answer: "Ми пропонуємо різноманітні кавові напої, включаючи еспресо, лате, капучино та американо.",
-          active: false,
-        },
-        {
-          question: "Чи пропонуєте ви безмолочні варіанти молока?",
-          answer: "Так, ми пропонуємо мигдальне, соєве та вівсяне молоко як безмолочні варіанти.",
-          active: false,
-        },
-        {
-          question: "Чи пропонуєте ви каву без кофеїну?",
-          answer: "Так, ми пропонуємо каву без кофеїну.",
-          active: false,
-        },
-        {
-          question: "У вас є Wi-Fi?",
-          answer: "Так, у нас є безкоштовний Wi-Fi для клієнтів.",
-          active: false,
-        },
-      ],
-    };
+  data: () => ({
+    title: 'Faq',
+    faqs: questionsArr
+  }),
+  components: {
+    AppHeader: HeaderPv,
+    AppFooter: FooterPv
   },
   methods: {
     toggleActive(faq) {
       faq.active = !faq.active;
-    },
-  },
+    }
+  }
 };
 </script>
 
