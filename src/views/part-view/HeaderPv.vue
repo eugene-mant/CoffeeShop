@@ -1,16 +1,15 @@
 <styles lang="scss">
 	.header-pv {
-		height: 5rem;
+		height: 6rem;
 		padding: 0 3rem;
-		//background: #444;
-
+		//background: #ddd;
+		
 		.app-logo {
-			min-width: 3rem;
-			min-height: 3rem;
-			background: none;
-			width: 100px;
-			height: 100px;
+			height: 6rem;
+			width: 6rem;
+			margin: auto 0;
 		}
+		
 		.main-nav {
 			margin: auto;
 		}
@@ -20,25 +19,14 @@
 			background: #aaa;
 			margin-left: 1rem;
 		}
-		* {
-			margin-top: auto;
-			margin-bottom: auto;
-		}
-		.logo
-		{
-			width: 100px;
-			height: 100px;
-
-		}
 	}
 </styles>
 
 <template>
     <header class="header-pv h-box">
-		<img class="app-logo" src="https://images.vexels.com/media/users/3/149532/isolated/preview/7ecd44f018ccc3e0bfe0c5f22b925a29-coffee-shop-take-away-badge.png" alt="">
-       
+		<app-logo link="/" />
         <app-nav />
-        <div class="h-box">
+        <div class="h-box" style="margin: auto 0">
             <div class="btn u-circle"></div>	
             <div class="btn u-circle"></div>
             <div class="btn u-circle"></div>
@@ -47,12 +35,14 @@
 </template>
 
 <script>
+import AppLogo from '~/views/components/AppLogo.vue';
 import Navigation from '~/views/components/Navigation.vue';
 
 export default {
 	name: 'HeaderPv',
 	data : () => ({}),
 	components: {
+		AppLogo,
 		AppNav: Navigation
 	}
 }

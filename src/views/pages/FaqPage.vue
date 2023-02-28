@@ -1,5 +1,5 @@
 <styles lang="scss" scoped>
-  @import url('https://fonts.googleapis.com/css?family=Hind:300,400&display=swap');
+  //@import url('https://fonts.googleapis.com/css?family=Hind:300,400&display=swap');
 
 $bg: #fff;
 $text: #7288a2;
@@ -7,13 +7,8 @@ $gray: #4d5974;
 $lightgray: #e5e5e5;
 $blue: #03b5d2;
 
-* {
-  box-sizing: border-box;
-  &::before, &::after {
-    box-sizing: border-box;
-  }
-}
 
+/*
 body {
   margin: 0;
   padding: 0;
@@ -23,6 +18,7 @@ body {
   display: flex;
   min-height: 100vh;
 }
+*/
 
 .container {
   margin: 0 auto;
@@ -126,7 +122,7 @@ body {
     <div class="page">
 		<app-header />
         <div class="container">
-  <h1>{{title}}</h1>
+    <h1 class="page-title">{{title}}</h1>
 
   <div class="accordion">
     <div class="accordion-item" v-for="(faq, index) in faqs" :key="index">
@@ -160,7 +156,7 @@ questionsArr.forEach(i => i.active = false);
 export default {
 	name: 'FaqPage',
   data: () => ({
-    title: 'Faq',
+    title: 'FAQ',
     faqs: questionsArr
   }),
   components: {

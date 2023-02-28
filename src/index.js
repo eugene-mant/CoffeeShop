@@ -1,4 +1,5 @@
 import '~/mount/styles.scss';
+import devPlugin from '~/dev/index.js';
 import { createApp } from 'vue';
 import App from '~/mount/App.vue';
 
@@ -11,4 +12,5 @@ createApp(App)
 	history: createWebHistory(),
 	routes
 }))
+.use(devPlugin)
 .mount('#app');

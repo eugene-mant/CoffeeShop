@@ -1,28 +1,6 @@
 <styles lang="scss">
-    header {
-		padding: 2rem 3rem;
-
-		.app-logo {
-			min-width: 3rem;
-			min-height: 3rem;
-			background: #aaa;
-		}
-		.main-nav {
-			margin: auto;
-		}
-		.btn {
-			width: 2rem;
-			height: 2rem;
-			background: #aaa;
-			margin-left: 1rem;
-		}
-		* {
-			margin-top: auto;
-			margin-bottom: auto;
-		}
-	}
 	.slogan {
-		height: calc(100vh - 5rem);
+		height: calc(100vh - 6rem);
 
 		.group {
 			margin: auto;

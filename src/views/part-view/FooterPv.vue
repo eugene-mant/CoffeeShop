@@ -155,7 +155,7 @@ $mobile:"max-width:767px";
     <div class="footer-pv-content">
       <div class="footer-pv-content-left">
         <div class="footer-pv-content-left-logo">
-          <img src="https://images.vexels.com/media/users/3/149532/isolated/preview/7ecd44f018ccc3e0bfe0c5f22b925a29-coffee-shop-take-away-badge.png" alt="">
+          <app-logo />
         </div>
         <div class="footer-pv-content-left-text">
           <span>Copyright © 2023</span>
@@ -166,16 +166,16 @@ $mobile:"max-width:767px";
       
       <div class="footer-pv-content-right">
         <div class="footer-pv-content-right-item">
-          <a href="" target="_blank">Twitter</a>
+          <a href="/" target="_blank">Twitter</a>
         </div>
         <div class="footer-pv-content-right-item">
-          <a href="" target="_blank">Instagram</a>
+          <a href="/" target="_blank">Instagram</a>
         </div>
         <div class="footer-pv-content-right-item">
-          <a href="" target="_blank">Facebook</a>
+          <a href="/" target="_blank">Facebook</a>
         </div>
         <div class="footer-pv-content-right-item">
-          <a href="/faq" target="_blank">FAQ</a>
+          <router-link to="/faq">FAQ</router-link>
         </div>
       </div>
     </div>
@@ -183,6 +183,10 @@ $mobile:"max-width:767px";
 </template>
 
 <script>
-
-
+import AppLogo from '~/views/components/AppLogo.vue';
+export default {
+  components: {
+    AppLogo
+  }
+}
 </script>

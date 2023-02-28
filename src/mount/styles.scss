@@ -2,6 +2,8 @@
 точка збірки загальних стилів
 */
 
-@import "~/../../../node_modules/normalize-scss/sass/normalize.scss";
+//@import "~/../../../node_modules/normalize-scss/sass/_normalize.scss";
+@import "~/styles/reset.scss"; 
 @import "~/styles/common.scss";
+@import "~/styles/rwd-sizes.scss";
 @import "~/styles/page.scss";
