@@ -16,6 +16,7 @@
 import HeaderPv from '~/views/part-view/HeaderPv.vue';
 import FooterPv from '~/views/part-view/FooterPv.vue';
 
+
 export default {
 	name: 'AboutPage',
     data: () => ({

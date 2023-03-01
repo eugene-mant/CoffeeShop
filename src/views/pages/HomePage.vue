@@ -22,6 +22,9 @@
 <template>
 	<div class="page">
 		<app-header />
+
+
+	    <LoginForm />
 		<div class="slogan v-box">
 			<div class="group v-box" style="">
 				<div class="title">{{homeSlogan}}</div>
@@ -39,6 +42,7 @@
 <script>
 import HeaderPv from '~/views/part-view/HeaderPv.vue';
 import FooterPv from '~/views/part-view/FooterPv.vue';
+import LoginForm from '~/views/components/LoginForm.vue';
 
 export default {
 	name: 'HomePage',
@@ -47,7 +51,8 @@ export default {
 	}),
 	components: {
 		AppHeader: HeaderPv,
-		AppFooter: FooterPv
+		AppFooter: FooterPv,
+		LoginForm: LoginForm 
 	}
 }
 </script>

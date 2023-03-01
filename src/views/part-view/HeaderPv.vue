@@ -1,8 +1,15 @@
 <styles lang="scss">
 	.header-pv {
-		height: 6rem;
-		padding: 0 3rem;
+		position: fixed;
+		padding: 20px 100px;
 		//background: #ddd;
+		top:0;
+		left: 0;
+		width: 100%;
+		display:flex;
+		justify-content: space-between;
+		align-items: center;
+		z-index: 99;
 		
 		.app-logo {
 			height: 6rem;
@@ -26,11 +33,6 @@
     <header class="header-pv h-box">
 		<app-logo link="/" />
         <app-nav />
-        <div class="h-box" style="margin: auto 0">
-            <div class="btn u-circle"></div>	
-            <div class="btn u-circle"></div>
-            <div class="btn u-circle"></div>
-        </div>
     </header>
 </template>
 
