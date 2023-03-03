@@ -11,6 +11,16 @@ html, body {
 	padding: 0;
 }
 
+//#region Наші загальні стилі
+a {
+    text-decoration: none;
+}
+h1 { font-size: 4rem; }
+h2 { font-size: 3rem; }
+//#endregion
+
+
+
 #app {
     height: 100%;
     width: 100%;
@@ -22,9 +32,6 @@ html, body {
 
 
 // tmp
-a {
-    text-decoration: none;
-}
 .u-circle {
     display: block;
     border-radius: 50%;

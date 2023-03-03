@@ -17,6 +17,13 @@
 			}
 		}
 	}
+	.link-demo-page {
+		background-color: darkred;
+		color: white;
+	}
+	.app-auth-panel {
+		display: none; // приховав логін форму
+	}
 </styles>
 
 <template>
@@ -24,11 +31,11 @@
 		<app-header />
 
 
-	    <LoginForm />
+	    <LoginForm class="app-auth-panel" />
 		<div class="slogan v-box">
 			<div class="group v-box" style="">
 				<div class="title">{{homeSlogan}}</div>
-				<router-link class="u-btn" to="/products">Shop now</router-link>
+				<router-link class="link-demo-page u-btn" to="/demo">ДЕМО ТУТ</router-link>
 			</div>
 		</div>
 

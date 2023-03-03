@@ -1,5 +1,4 @@
 <styles lang="scss" scoped>
-	$page-margin-side: 3rem;
 	$cards-space-between: 2rem;
 
     .u-block-1 {
@@ -8,14 +7,6 @@
         margin: auto;
     }
 
-	// це треба винести в загальні стилі для page
-	.page {
-		main {
-			flex: 1;
-			margin: $page-margin-side;
-			
-		}
-	}
 	.group {
 		justify-content: space-between;
 		margin: $cards-space-between 0;
