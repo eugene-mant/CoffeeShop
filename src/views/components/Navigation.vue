@@ -67,7 +67,12 @@
         <router-link to="/">Home</router-link>
         <router-link to="/menu">Menu</router-link>
         <router-link to="/about">About</router-link>
-        <button class="btnLogin-popup">Login</button>
+        <button class="btnLogin-popup" @click="isOpen">Login</button>
     </div>
     
 </template>
+
+<script>
+
+
+</script>

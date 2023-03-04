@@ -1,4 +1,4 @@
-<style lang="scss">
+<styles lang="scss">
 	.login-block {
 		display: flex;
 		flex-direction: column;
@@ -14,6 +14,7 @@
 		border-radius: 1rem;
 		backdrop-filter: blur(10px);
 		box-shadow: 0 0 1em rgb(0 0 0 / 10%);
+		align-items: center;
 
 
 		.login-block-title {
@@ -56,6 +57,8 @@
 				color: cadetblue;
 				font-weight: 500;
 				box-sizing: border-box;
+				
+				
 				&:hover {
 					background-color: cadetblue;
 					color: whitesmoke;
@@ -133,7 +136,7 @@
 			}
 		} 
 	}
-</style>
+</styles>
 
 <template>
 	<div class="demo-page page">

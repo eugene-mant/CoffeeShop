@@ -182,93 +182,133 @@ p a:hover{
 
 <template>
 
-<div class="wrapper">
-    <span class="icon-close">
-        <font-awesome-icon
-         icon="fa-light fa-xmark" />
-    </span>
-
-    <div class="form-box login">
-        <h2>Login</h2>
-         <form action="#">
+  <div class="wrapper">
+      <span class="icon-close">
+          <font-awesome-icon
+           icon="fa-light fa-xmark" />
+      </span>
+  
+      <div class="form-box login">
+          <h2>{{lbs.login}}</h2>
+           <form action="#">
+                <div class="input-box">
+                    <span class="icon">
+                      <font-awesome-icon 
+                      icon="fa-thin fa-envelope" />
+                    </span>
+                            <input type="email" required>
+                            <label>{{lbs.email}}</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                      <font-awesome-icon 
+                      icon="fa-thin fa-lock-keyhole" />
+                    </span>
+                            <input type="password" required>
+                            <label>{{lbs.password}}</label>
+                </div>
+                <div class="rememder-forgot">
+                      <label>
+                      <input type="checkbox">{{lbs.remember}}
+                      </label>
+                  <a href="#">{{lbs.forgot}}</a>
+                </div>
+                   <button type="submit" class="btn">{{lbs.login}}</button>
+                <div class="login-register">
+                  <p>{{lbs.nothaveaccount}}
+                     <a href="#" class="register-link">{{lbs.register}}</a>
+                  </p>
+                </div>
+           </form>
+      </div>
+  
+      <div class="form-box register">
+          <h2>{{lbs.registration}}</h2>
+           <form action="#">
               <div class="input-box">
-                  <span class="icon">
-                    <font-awesome-icon 
-                    icon="fa-thin fa-envelope" />
-                  </span>
-                          <input type="email" required>
-                          <label>Email</label>
-              </div>
-              <div class="input-box">
-                  <span class="icon">
-                    <font-awesome-icon 
-                    icon="fa-thin fa-lock-keyhole" />
-                  </span>
-                          <input type="password" required>
-                          <label>Password</label>
-              </div>
-              <div class="rememder-forgot">
-                    <label>
-                    <input type="checkbox">Remember me
-                    </label>
-                <a href="#">Forgot Password?</a>
-              </div>
-                 <button type="submit" class="btn">Login</button>
-              <div class="login-register">
-                <p>Don't have an account?
-                   <a href="#" class="register-link">Register</a>
-                </p>
-              </div>
-         </form>
-    </div>
+                    <span class="icon">
+                      <font-awesome-icon 
+                      icon="fa-thin fa-user" />
+                    </span>
+                            <input type="text" required>
+                            <label>{{lbs.username}}</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                      <font-awesome-icon 
+                      icon="fa-thin fa-envelope" />
+                    </span>
+                            <input type="email" required>
+                            <label>{{lbs.email}}</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                      <font-awesome-icon 
+                      icon="fa-thin fa-lock-keyhole" />
+                    </span>
+                            <input type="password" required>
+                            <label>{{lbs.password}}</label>
+                </div>
+                <div class="rememder-forgot">
+                      <label>
+                      <input type="checkbox">{{lbs.terms}}
+                      </label>
+                
+                </div>
+                   <button type="submit" class="btn">{{lbs.register}}</button>
+                <div class="login-register">
+                  <p>{{lbs.haveaccount}}
+                     <a href="#" class="login-link">{{lbs.login}}</a>
+                  </p>
+                </div>
+           </form>
+      </div>
+  </div>
+  
+  </template>
+  
+  <script>
+  
+  const labels = {
+    login: 'Login',
+    email: 'Email',
+    username: `Username`,
+    password: 'Password',
+    register: `Register`,
+    remember: `Remember me`,
+    forgot: `Forgot Password?`,
+    registration: `Registration`,
+    terms: `I agree to the terms & conditions`,
+    haveaccount: `Already have an account?`,
+    nothaveaccount: `Don't have an account?`,
+  }
+  
+  export default{
+    name: 'LoginForm',
+    components: {
+  
+    },
+    data: () =>({
+      isOpenLoginBlocklbs:false,
+      lbs: labels,
+      loginFormData:{
+        email: 'email@gmail.com',
+        password: '',
+      }
+    }),
+  
+  }
 
-    <div class="form-box register">
-        <h2>Registration</h2>
-         <form action="#">
-            <div class="input-box">
-                  <span class="icon">
-                    <font-awesome-icon 
-                    icon="fa-thin fa-user" />
-                  </span>
-                          <input type="text" required>
-                          <label>Username</label>
-              </div>
-              <div class="input-box">
-                  <span class="icon">
-                    <font-awesome-icon 
-                    icon="fa-thin fa-envelope" />
-                  </span>
-                          <input type="email" required>
-                          <label>Email</label>
-              </div>
-              <div class="input-box">
-                  <span class="icon">
-                    <font-awesome-icon 
-                    icon="fa-thin fa-lock-keyhole" />
-                  </span>
-                          <input type="password" required>
-                          <label>Password</label>
-              </div>
-              <div class="rememder-forgot">
-                    <label>
-                    <input type="checkbox">I agree to the 
-                    terms & conditions
-                    </label>
-              
-              </div>
-                 <button type="submit" class="btn">Register</button>
-              <div class="login-register">
-                <p>Already have an account?
-                   <a href="#" class="login-link">Login</a>
-                </p>
-              </div>
-         </form>
-    </div>
-</div>
-
-</template>
-
-<script>
+  let isOpen = false;
+btnPopup.addEventListener('click', ()=> {
+  isOpen = !isOpen;
+  if(isOpen) {
+     wrapper.classList.add('active-popup');
+  }
+  else {
+    wrapper.classList.remove('active-popup');
+  }
+});
 
 // const wrapper = document.querySelector(`.wrapper`);
 // const loginLink = document.querySelector(`.login-link`);
@@ -291,5 +331,6 @@ p a:hover{
 // iconClose.addEventListener('click', ()=>{
 //     wrapper.classList.remove('active-popup');
 // });
+
 
 </script>

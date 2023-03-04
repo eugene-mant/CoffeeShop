@@ -1,4 +1,4 @@
-<style lang="scss" scoped>
+<styles lang="scss" scoped>
 	$height: 2em;
 	$space: .4em;
 	$color: cadetblue;
@@ -135,7 +135,7 @@
 		}
 	}
 
-</style>
+</styles>
 
 <template>
 	<div :class="'v-textbox v-textbox-' + type">

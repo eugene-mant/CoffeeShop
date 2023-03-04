@@ -21,23 +21,26 @@
 		background-color: darkred;
 		color: white;
 	}
-	.app-auth-panel {
-		display: none; // приховав логін форму
-	}
+
+	// .app-auth-panel {
+	// 	display: none; // приховав логін форму
+	// }
 </styles>
 
 <template>
 	<div class="page">
 		<app-header />
 
-
-	    <LoginForm class="app-auth-panel" />
+		<LoginForm />
+	    
 		<div class="slogan v-box">
 			<div class="group v-box" style="">
 				<div class="title">{{homeSlogan}}</div>
 				<router-link class="link-demo-page u-btn" to="/demo">ДЕМО ТУТ</router-link>
 			</div>
 		</div>
+
+
 
 		<div class="u-block" style="height: 40em; width: 50%; margin-left: 3rem"></div>
 		<div class="u-block" style="height: 600px; width: 70%; margin: 2rem 3rem 0 auto"></div>
