@@ -32,7 +32,7 @@
 <template>
     <header class="header-pv h-box">
 		<app-logo link="/" />
-        <app-nav />
+        <app-nav @toggleLoginForm="$emit('toggleLoginForm')" />
     </header>
 </template>
 

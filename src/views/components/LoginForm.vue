@@ -14,10 +14,11 @@
     overflow: hidden;
     transform: scale(0);
     transition: transform .5s ease, height .2s ease;
-    
-.wrapper.active-popup{
-    transform: scale(1);
-}
+  
+
+  .wrapper.active-popup{
+      transform: scale(1);
+  }
 
 .wrapper.active {
   height: 520px;
@@ -182,7 +183,7 @@ p a:hover{
 
 <template>
 
-  <div class="wrapper">
+  <div class="wrapper" :class="isOpenClass">
       <span class="icon-close">
           <font-awesome-icon
            icon="fa-light fa-xmark" />
@@ -285,6 +286,7 @@ p a:hover{
   
   export default{
     name: 'LoginForm',
+    props: ['open'],
     components: {
   
     },
@@ -296,9 +298,16 @@ p a:hover{
         password: '',
       }
     }),
-  
+    // computed значення, це ті що вираховується на основі чогось іншого
+    computed: {
+      isOpenClass() { 
+        // якщо prop open === true, повертаємо клас active-popup
+        return this.open ? 'active-popup' : ''; 
+      }
+    }
   }
 
+  /*
   let isOpen = false;
 btnPopup.addEventListener('click', ()=> {
   isOpen = !isOpen;
@@ -309,6 +318,7 @@ btnPopup.addEventListener('click', ()=> {
     wrapper.classList.remove('active-popup');
   }
 });
+*/
 
 // const wrapper = document.querySelector(`.wrapper`);
 // const loginLink = document.querySelector(`.login-link`);

@@ -29,9 +29,10 @@
 
 <template>
 	<div class="page">
-		<app-header />
+		<app-header @toggleLoginForm="toggleLoginForm" />
 
-		<LoginForm />
+		<!-- передаємо в компонент prop open. тепер вони повязані з isOpenLoginForm  -->
+		<LoginForm :open="isOpenLoginForm" />
 	    
 		<div class="slogan v-box">
 			<div class="group v-box" style="">
@@ -57,12 +58,20 @@ import LoginForm from '~/views/components/LoginForm.vue';
 export default {
 	name: 'HomePage',
 	data : () => ({
+		// додаємо флажок, він буде реактивний
+		isOpenLoginForm: false,
 		homeSlogan : 'Цей слоган увікни...'
 	}),
 	components: {
 		AppHeader: HeaderPv,
 		AppFooter: FooterPv,
 		LoginForm: LoginForm 
+	},
+	methods: {
+		toggleLoginForm() {
+			console.log('isOpenLoginForm');
+			this.isOpenLoginForm = !this.isOpenLoginForm;
+		}
 	}
 }
 </script>
