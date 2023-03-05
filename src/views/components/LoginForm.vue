@@ -14,9 +14,9 @@
     overflow: hidden;
     transform: scale(0);
     transition: transform .5s ease, height .2s ease;
-  
+          }
 
-  .wrapper.active-popup{
+    &.active-popup{
       transform: scale(1);
   }
 
@@ -28,7 +28,7 @@
    transform: translateX(0);
 } 
 
-.wrapper.actice .form-box.login{
+.wrapper.active .form-box.login{
     transition: none;
     transform: translateX(-400px);
 }
@@ -37,7 +37,7 @@
     transition: none;
     transform: translateX(400px);
 }
-.wrapper.actice .form-box.register{
+.wrapper.active .form-box.register{
     transition: none;
     transform: translateX(-400px);
 }
@@ -63,6 +63,8 @@
         width: 100%;
         padding: 40px;
    
+}
+
 h2 {
      font-size: 2ex;
      color: #162938;
@@ -75,7 +77,7 @@ h2 {
       height: 50px;
       border-bottom: 2px solid #162938;
       margin: 30px 0;
-
+}
 label {
         position: absolute;
         top: 50%;
@@ -112,7 +114,7 @@ input {
         color: #162938;
         line-height: 57px;
       }
-   }
+   
 .rememder-forgot {
     font-size: .9em;
     color: #162938;
@@ -120,7 +122,7 @@ input {
     margin: -15px 0 15px;
     display:flex;
     justify-content: space-between;
-
+}
 
 label input{
         accent-color: #162938;
@@ -136,7 +138,7 @@ a:hover {
         text-decoration: underline;
     }
 
-   }
+   
 
 .btn {
     width: 100%;
@@ -160,6 +162,7 @@ a:hover {
     text-align: center;
     font-weight: 500;
     margin: 25px 0 10px;
+}
 
 p a{
     color: #162938;
@@ -168,15 +171,11 @@ p a{
 
     }
 
+
+
 p a:hover{
         text-decoration: underline;
     }
-   }
-
-   
-}
-
-}
 
 
 </styles>
