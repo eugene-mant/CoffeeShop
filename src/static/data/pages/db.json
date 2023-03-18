@@ -1,0 +1,52 @@
+{
+  "products": [
+    {
+      "image": "1.jpg",
+      "names": "Americano",
+      "price": 111,
+      "article": "1",
+      "available": true,
+      "category": "drink"
+    },
+    {
+      "image": "2.jpg",
+      "names": "Lungo",
+      "price": 222,
+      "article": "2",
+      "available": true,
+      "category": "drink"
+    },
+    {
+      "image": "3.jpg",
+      "names": "Latte",
+      "price": 333,
+      "article": "3",
+      "available": false,
+      "category": "drink"
+    },
+    {
+      "image": "4.jpg",
+      "names": "Cappuccion",
+      "price": 444,
+      "article": "4",
+      "available": true,
+      "category": "drink"
+    },
+    {
+      "image": "5.jpg",
+      "names": "coffee bean robusta",
+      "price": 555,
+      "article": "5",
+      "available": false,
+      "category": "bean"
+    },
+    {
+      "image": "6.jpg",
+      "names": "coffee bean",
+      "price": 666,
+      "article": "6",
+      "available": true,
+      "category": "bean"
+    }
+  ]
+}

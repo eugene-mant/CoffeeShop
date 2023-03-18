@@ -16,7 +16,7 @@
     transition: transform .5s ease, height .2s ease;
           }
 
-    &.active-popup{
+    .active-popup{
       transform: scale(1);
   }
 
