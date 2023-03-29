@@ -1,0 +1,48 @@
+@import "~/styles/_mixins.scss";
+@import "~/styles/_variables.scss";
+// тимчасові стилі
+
+//#region загальні
+.u-circle {
+    display: block;
+    border-radius: 50%;
+}
+.u-radius {
+    border-radius: 1rem;
+}
+.u-block {
+    border-radius: $def-block-border-radius;
+    background: #b9b9b9;
+    @include backgroundLines(90deg, rgba(255, 255, 255, 0), rgb(0 0 0 / 10%), 2px);
+}
+.u-btn {
+    padding: 1em;
+    border: 1px solid black;
+    border-radius: .5rem;
+    color: black;
+
+    border: 2px solid rgb(201 65 65);
+    font-weight: 600;
+
+    @include setPrettyBg(rgb(248, 78, 78), 90deg, rgba(255, 255, 255, 0), rgb(0 0 0 / 10%), 3px);
+}
+
+.v-box {
+    display: flex;
+    flex-direction: column;
+}
+.h-box {
+    display: flex;
+    flex-direction: row;
+}
+//#endregion
+
+
+// конкретні
+.pretty-bg-image {
+    // прозорий background-image можна комбінувати з background-color
+    //background-image: url("https://www.transparenttextures.com/patterns/exclusive-paper.png");
+    background-image: repeating-linear-gradient(
+        90deg, #ffffff00, #cccccc42 2px, #dddddd54 2px, #ffffff61 4px
+        );
+}

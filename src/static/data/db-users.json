@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "username": "admin@coffee-shop.cc",
+        "password": "kiss-my-iron-ass",
+        "role": "admin",
+        "firstName": "Bender",
+        "lastName": "Rodriges"
+    },
+    {
+        "id": 2,
+        "username": "kenny@gmail.com",
+        "password": "qwerty123",
+        "role": "user",
+        "firstName": "",
+        "lastName": ""
+    }
+]

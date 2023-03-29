@@ -1,4 +1,4 @@
-<styles lang="scss" scoped>
+<style lang="scss" scoped>
 	$cards-space-between: 2rem;
 
     .u-block-1 {
@@ -26,7 +26,7 @@
 		width: 40%;
 		height: .8rem;
 	}
-</styles>
+</style>
 
 <template>
 	<div class="page">

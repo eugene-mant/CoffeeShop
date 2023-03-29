@@ -1,3 +1,5 @@
+@import "./_mixins.scss";
+
 html {
 	font-family: Calibri, Helvetica, Arial, sans-serif;
 	font-size: 16px;
@@ -25,35 +27,5 @@ h2 { font-size: 3rem; }
     height: 100%;
     width: 100%;
 	overflow: auto;
-
-    background-color: #ffffff;
-	background-image: url("https://www.transparenttextures.com/patterns/exclusive-paper.png");
-}
-
-
-// tmp
-.u-circle {
-    display: block;
-    border-radius: 50%;
-}
-.u-radius {
-    border-radius: 1rem;
-}
-.u-block {
-    background: #888;
-}
-.u-btn {
-    padding: 1em;
-    border: 1px solid black;
-    border-radius: 1rem;
-    color: black;
-}
-
-.v-box {
-    display: flex;
-    flex-direction: column;
-}
-.h-box {
-    display: flex;
-    flex-direction: row;
+    @include setPrettyBg(#fff, 90deg, #ffffff00, #dddddd54, 2px);
 }

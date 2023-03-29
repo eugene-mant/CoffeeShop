@@ -1,4 +1,4 @@
-<styles lang="scss" scoped>
+<style lang="scss" scoped>
 	$page-margin-side: 3rem;
 	$cards-space-between: 2rem;
 
@@ -26,7 +26,7 @@
             padding: 0 1em;
         }
 	}
-</styles>
+</style>
 
 <template>
     <router-link class="menu-category-card" :to="data.url">

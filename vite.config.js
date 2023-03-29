@@ -22,5 +22,14 @@ export default defineConfig({
 			'~': pathSrc
 		}
 	},
+	css: {
+		preprocessorOptions: {
+			scss: {
+				additionalData: `
+					@import "~/styles/global.scss";
+				`
+			}
+		}
+	},
 	plugins: [vue()]
 });

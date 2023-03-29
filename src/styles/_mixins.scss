@@ -1,0 +1,25 @@
+// mixins
+@mixin flex-v-box {
+    display: flex;
+    flex-direction: column;
+} 
+@mixin flex-h-box {
+    display: flex;
+    flex-direction: row;
+}
+
+
+// mixins functions
+@mixin backgroundLines($lineDeg, $lineColor1, $lineColor2, $size) {
+    background-image: repeating-linear-gradient(
+        $lineDeg,
+        $lineColor1,
+        $lineColor1 $size,
+        $lineColor2 $size,
+        $lineColor2 $size * 2
+    );
+}
+@mixin setPrettyBg($bgColor, $lineDeg, $lineColor1, $lineColor2, $size) {
+    background-color: $bgColor;
+    @include backgroundLines($lineDeg, $lineColor1, $lineColor2, $size);
+}

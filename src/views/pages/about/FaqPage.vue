@@ -1,0 +1,173 @@
+<style lang="scss" scoped>
+  //@import url('https://fonts.googleapis.com/css?family=Hind:300,400&display=swap');
+
+$bg: #fff;
+$text: #7288a2;
+$gray: #4d5974;
+$lightgray: #e5e5e5;
+$blue: #03b5d2;
+
+
+/*
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Hind', sans-serif;
+  background: $bg;
+  color: $gray;
+  display: flex;
+  min-height: 100vh;
+}
+*/
+
+.container {
+  margin: 0 auto;
+  padding: 4rem;
+  width: 48rem;
+}
+
+.accordion {
+  .accordion-item {
+    border-bottom: 1px solid $lightgray;
+    button[aria-expanded='true'] {
+      border-bottom: 1px solid $blue;
+    }
+  }
+  button {
+    position: relative;
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 1em 0;
+    color: $text;
+    font-size: 1.15rem;
+    font-weight: 400;
+    border: none;
+    background: none;
+    outline: none;
+    &:hover, &:focus {
+      cursor: pointer;
+      color: $blue;
+      &::after {
+        cursor: pointer;
+        color: $blue;
+        border: 1px solid $blue;
+      }
+    }
+    .accordion-title {
+      padding: 1em 1.5em 1em 0;
+    }
+    .icon {
+      display: inline-block;
+      position: absolute;
+      top: 18px;
+      right: 0;
+      width: 22px;
+      height: 22px;
+      border: 1px solid;
+      border-radius: 22px;
+      &::before {
+        display: block;
+        position: absolute;
+        content: '';
+        top: 9px;
+        left: 5px;
+        width: 10px;
+        height: 2px;
+        background: currentColor;
+      }
+      &::after {
+        display: block;
+        position: absolute;
+        content: '';
+        top: 5px;
+        left: 9px;
+        width: 2px;
+        height: 10px;
+        background: currentColor;
+      }
+    }
+  }
+  button[aria-expanded='true'] {
+    color: $blue;
+    .icon {
+      &::after {
+        width: 0;
+      }
+    }
+    + .accordion-content {
+      opacity: 1;
+      max-height: 9em;
+      transition: all 200ms linear;
+      will-change: opacity, max-height;
+    }
+  }
+  .accordion-content {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 200ms linear, max-height 200ms linear;
+    will-change: opacity, max-height;
+    p {
+      font-size: 1rem;
+      font-weight: 300;
+      margin: 2em 0;
+    }
+  }
+}
+</style>
+
+
+<template>
+    <div class="page">
+		<app-header />
+        <div class="container">
+    <h1 class="page-title">{{title}}</h1>
+
+  <div class="accordion">
+    <div class="accordion-item" v-for="(faq, index) in faqs" :key="index">
+      <button :aria-expanded="faq.active" @click="toggleActive(faq)">
+        <div class="accordion-title">
+          {{ faq.question }}
+        </div>
+        <span class="icon"></span>
+      </button>
+      <div class="accordion-content" v-show="faq.active">
+        <p>{{ faq.answer }}</p>
+      </div>
+    </div>
+  </div>
+        </div>
+		<app-footer />
+    </div>
+</template>
+
+<script>
+import HeaderPv from '~/views/part-view/HeaderPv.vue';
+import FooterPv from '~/views/part-view/FooterPv.vue';
+
+import questionsArr from '~/static/data/pages/faq.json';
+/*
+// можна забрати зі статичних даних непотрібні поля
+// додаємо властивість active для логіки тут:
+questionsArr.forEach(i => i.active = false);
+*/
+
+export default {
+	name: 'FaqPage',
+  data: () => ({
+    title: 'FAQ',
+    faqs: questionsArr
+  }),
+  components: {
+    AppHeader: HeaderPv,
+    AppFooter: FooterPv
+  },
+  methods: {
+    toggleActive(faq) {
+      faq.active = !faq.active;
+    }
+  }
+};
+</script>
+

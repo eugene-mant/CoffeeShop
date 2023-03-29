@@ -1,4 +1,4 @@
-<styles lang="scss">
+<style lang="scss" scoped>
  
 .footer-pv {
         height: 8rem;
@@ -148,7 +148,7 @@ $mobile:"max-width:767px";
       }
     }
   }
-</styles>
+</style>
 
 <template>
   <div class="footer-pv">

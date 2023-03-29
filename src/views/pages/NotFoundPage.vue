@@ -1,11 +1,11 @@
-<styles lang="scss">
+<style lang="scss">
     .notfound-page {
         .u-btn {
             margin: 2rem auto;
             cursor: pointer;
         }
     }
-</styles>
+</style>
 
 <template>
 	<div class="notfound-page page">

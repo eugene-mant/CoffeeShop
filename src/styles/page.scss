@@ -1,17 +1,16 @@
-$page-margin-side: 3rem;
+@import "~/styles/_variables.scss";
 
 .page {
     display: flex;
     flex-direction: column;
     min-height: 100%;
-    //background-color: #ffdcdc;
 
     main {
         flex: 1;
-        margin: $page-margin-side;
+        margin: 0 $page-side-space;
     }
     .page-title {
-        font-size: 4rem;
-        margin: 2rem auto;
+        font-size: $title-big;
+        margin: $v-space-m auto;
     }
 }
