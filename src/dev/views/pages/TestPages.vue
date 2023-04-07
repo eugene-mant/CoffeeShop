@@ -13,18 +13,23 @@
 
 <template>
     <div class="test-page">
-        <p>Hello Vue!</p>
+        <app-header />
         <mainWrapper></mainWrapper>
+        <app-footer />
     </div>
 </template>
 
 
 <script>
+import HeaderPv from '~/views/part-view/HeaderPv.vue';
+import FooterPv from '~/views/part-view/FooterPv.vue';
 import mainWrapper from '~/dev/test/testcomponents/main-wrapper.vue';
 
 export default{
     name: 'TestPages',
     components:{
+        AppHeader: HeaderPv,
+		AppFooter: FooterPv,
         mainWrapper,
     }
 }

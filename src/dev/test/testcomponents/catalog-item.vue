@@ -1,24 +1,7 @@
 <template lang="">
     <div class="catalog-item">
         <img :src="productData.image" alt="img"> 
-        
-        <!-- помилка з відображенням картинок 
-            поки відображається тільки одна картинка та не береться шлях з данних які надходять
-            були спроби використати: 
-            <img :src="require('~/assets/images/' + product_data.image)" alt="img">
-            це видало помилку ,що воно не задефіновано саме помилка в "require"
-            потім я спробував
-
-            <img :src="getImageUrl(product_data.image)" alt="img">
-
-           methods: {
-                 getImageUrl(imageName) {
-                  return require("~/assets/images/" + imageName);
-                 },
-              },
-
-              нажаль це викликало тільки помилки(
-        -->
+    
         <p class="catalog-item__name name">{{productData.name}}</p>
         <p class="catalog-item__price price">Price:{{productData.price}} $</p>
         <button
@@ -49,7 +32,7 @@ export default {
     methods: {
         sendDataToParent() {
             this.$emit('sendArticle', this.productData.article)
-        }
+        },
     }
 }
 </script>

@@ -8,7 +8,7 @@
 <template>
     <div class="main-wrapper">
     <p>{{ title }}</p>
-   
+    <cart></cart>
     <Catalog></Catalog>
     </div>
 </template>
