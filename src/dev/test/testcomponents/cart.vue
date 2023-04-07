@@ -53,7 +53,7 @@
   }
   </script>
   
-  <style lang="scss">
+  <style lang="scss" scoped>
     .cart {
       .cart__items {
         display: flex;

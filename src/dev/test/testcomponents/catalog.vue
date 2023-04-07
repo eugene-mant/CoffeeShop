@@ -3,7 +3,7 @@
         <h1>Catalog</h1>
         <div class="catalog__list">
             <catalogItem
-             v-for="product in products"
+             v-for="product in this.$store.state.products"
              :key="product.article"
              :product-data="product"
              @sendArticle="showChildArticleInConsole"
@@ -14,8 +14,9 @@
 </template>
 
 <script>
-import api from '~/bll/productsApi.js';
+
 import catalogItem from './catalog-item.vue';
+import {mapActions, mapGetters} from 'vuex';
 
 export default {
     name: 'catalog',
@@ -25,36 +26,31 @@ export default {
     props: {},
     data() {
         return {
-            isLoad: false,
-            products: []
+            
+            
         }
     },
-    computed: {},
+    computed: {
+        ...mapGetters([
+            'PRODUCTS'
+        ])
+    },
     methods: {
+        ...mapActions([
+            'GET_PRODUCTS_FROM_API'
+          ]),
         showChildArticleInConsole(data){
             console.log(data)
-        },
-        loadData() {
-            this.isLoad = true;
-
-            // отримуємо з api всі товари
-            api.getProducts()
-            /* 
-                звісно це відбудеться миттєво, бо у нас немає ніякого звернення до сервера
-                розкоментуй цей код і отримаєш 4 секунди затримки
-                це демо того, що буде при реальному запиті. 
-                нам потрібно це враховувати, і показувати користувачу що йде завантаження
-            */
-            //.then((p) => new Promise((resolve) => { setTimeout(() => resolve(p), 4000) }))
-            .then(products => {
-                this.products = products;
-                this.isLoad = false;
-            });
         }
     },
-    created() {
-        this.loadData();
-    }
+    mounted() {
+        this.GET_PRODUCTS_FROM_API()
+        .then((response) =>{
+            if(response.data){
+                console.log('Data arriver!');
+            }
+        })
+    },
 }
 </script>
 
