@@ -1,11 +1,6 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import axios from 'axios'
+import productsApi from '~/bll/productsApi.js';
 
-Vue.use(Vuex);
-
-
-let store = new Vuex.store({
+export default {
  state: {
     products: [],
     cart: [],
@@ -17,7 +12,8 @@ let store = new Vuex.store({
  },
  actions: {
     GET_PRODUCTS_FROM_API({commit}){
-     return axios('http://localhost:3000/products',{
+    /*
+    return axios('http://localhost:3000/products',{
         method: "GET"
     })
     .then((products)=>{
@@ -28,6 +24,15 @@ let store = new Vuex.store({
         console.log(error)
         return error;
     })
+    */
+    productsApi.getProducts()
+        .then(products => {
+            commit('SET_PRODUCTS_TO_STATE', products);
+        })
+        .catch((error)=>{
+            console.log(error)
+            return error;
+        })
   }
  },
  getters: {
@@ -35,7 +40,4 @@ let store = new Vuex.store({
         return state.products;
     }
  },
-});
-
-
-export default store;
+};

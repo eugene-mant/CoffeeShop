@@ -9,16 +9,21 @@ import devPlugin from '~/dev/devPlugin.js';
 import authPlugin from '~/plugins/authPlugin/index.js';
 import authAPI from '~/bll/authService/api.js';
 
+import { createStore } from 'vuex';
+import store from '~/store/store-vuex.js';
 
 // створюємо роутер
 const router = createRouter({
 	history: createWebHistory(),
 	routes
 });
+// створюємо store
+const vuexStore = createStore(store);
 
 export default {
     install(app) {
         app
+        .use(vuexStore)
         .use(router)
         .use(authPlugin, { 
             api: authAPI, 

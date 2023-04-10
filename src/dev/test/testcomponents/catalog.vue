@@ -2,8 +2,9 @@
     <div class='catalog'>
         <h1>Catalog</h1>
         <div class="catalog__list">
+            <!-- раз робиш ...mapGetters([, чому б не використовувати? -->
             <catalogItem
-             v-for="product in this.$store.state.products"
+             v-for="product in PRODUCTS"
              :key="product.article"
              :product-data="product"
              @sendArticle="showChildArticleInConsole"
@@ -43,13 +44,21 @@ export default {
             console.log(data)
         }
     },
+    created() {
+        // нащо чекати поки компонент буде змонтований?
+        // можна завантажувати при строренні
+        this.GET_PRODUCTS_FROM_API();
+    },
     mounted() {
+        // компоненту не обов'язково знати такі страшні подробиці
+        /*
         this.GET_PRODUCTS_FROM_API()
         .then((response) =>{
             if(response.data){
                 console.log('Data arriver!');
             }
         })
+        */
     },
 }
 </script>
