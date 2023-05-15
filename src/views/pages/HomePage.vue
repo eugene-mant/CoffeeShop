@@ -38,12 +38,7 @@
 					<router-link class="u-btn to-catalog-btn" to="/test">{{lbs.catalog}}</router-link>
 				</div>
 			</div>
-
-			<div>
-				<svg><use xlink:href="#app-logo"></use></svg>
-				<svg><use xlink:href="#logo-bg"></use></svg>
-			</div>
-
+			
 			<div class="u-block" style="height: 40em; width: 50%; margin-left: 3rem"></div>
 			<div class="u-block" style="height: 600px; width: 70%; margin: 2rem 3rem 0 auto"></div>
 			<div class="u-block" style="height: 20rem; width: 40%; margin: 5rem auto"></div>
