@@ -1,4 +1,4 @@
-import productsApi from '~/bll/productsApi.js';
+import productsApi from '~/bll/services/productsApi.js';
 
 export default {
  state: {
@@ -25,7 +25,7 @@ export default {
         return error;
     })
     */
-    productsApi.getProducts()
+    productsApi.getAll()
         .then(products => {
             commit('SET_PRODUCTS_TO_STATE', products);
         })

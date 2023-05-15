@@ -1,4 +1,4 @@
-import roles from '~/bll/authService/userRoleTypes.js';
+import roles from '~/bll/services/authService/userRoleTypes.js';
 
 import HomePage from '~/views/pages/HomePage.vue';
 import AboutPage from '~/views/pages/about/AboutPage.vue';

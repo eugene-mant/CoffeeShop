@@ -1,5 +1,5 @@
 import InDevelopment from '~/dev/views/InDevelopment.vue';
-import productsApi from '~/bll/productsApi.js';
+import productsApi from '~/bll/services/productsApi.js';
 
 export default {
     install(app) {

@@ -7,7 +7,7 @@ import icons from '~/mount/icons.js';
 import devPlugin from '~/dev/devPlugin.js';
 
 import authPlugin from '~/plugins/authPlugin/index.js';
-import authAPI from '~/bll/authService/api.js';
+import authAPI from '~/bll/services/authService/api.js';
 
 import { createStore } from 'vuex';
 import store from '~/store/store-vuex.js';
