@@ -1,3 +1,4 @@
+import { createPinia } from 'pinia';
 import { createRouter, createWebHistory } from 'vue-router';
 import routes from '~/mount/routes.js';
 
@@ -9,21 +10,23 @@ import devPlugin from '~/dev/devPlugin.js';
 import authPlugin from '@code/vue-plugins/authPlugin/index.js';
 import authAPI from '~/bll/services/authService/api.js';
 
-import { createStore } from 'vuex';
-import store from '~/store/store-vuex.js';
+import { createStore as createVuexStore } from 'vuex';
+import vuexStoreObj from '~/dev/vuex-store/store-vuex.js';
+
 
 // створюємо роутер
 const router = createRouter({
 	history: createWebHistory(),
 	routes
 });
-// створюємо store
-const vuexStore = createStore(store);
 
 export default {
     install(app) {
         app
-        .use(vuexStore)
+        // створюємо vuex store (поки не видаляю)
+        .use(createVuexStore(vuexStoreObj))
+        // створюємо pinia store
+        .use(createPinia())
         .use(router)
         .use(authPlugin, { 
             api: authAPI, 

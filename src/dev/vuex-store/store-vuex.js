@@ -1,4 +1,4 @@
-import productsApi from '~/bll/services/productsApi.js';
+import productsApi from '~/bll/services/productsService/api.js';
 
 export default {
  state: {

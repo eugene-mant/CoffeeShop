@@ -1,5 +1,3 @@
-import products from '~/bll/localDAL/none/products';
-
 //#region пограємось у валідацію:
 const isPrice = v => (typeof v === 'number' && v > 0);
 const validator = {
@@ -9,7 +7,7 @@ const validator = {
     maxPrice: isPrice,
     category: v => typeof v === 'string'
 };
-const createProductsFilterParams = opts => {
+export const createProductsFilterParams = opts => {
     // додаємо тільки якщо властивість існує в opts і відповідає вимогам валідатора
     const filter = {};
     for(let key in opts) {
@@ -56,15 +54,3 @@ const createProductsFilterParams = opts => {
     return filter;
 }
 //#endregion
-
-const get = async (opts={}) => {
-    // щоб було цікавіше, додамо "пошук" по параметрам
-    const filter = createProductsFilterParams(opts);
-    return products.get(filter);
-}
-export default { 
-    getById: products.getById, 
-    getByArticle: products.getByArticle, 
-    get,
-    getAll: products.getAll
-}

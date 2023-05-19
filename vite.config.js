@@ -9,7 +9,14 @@ export default defineConfig({
 	root: path('./src/static'),
 	server: {
 		open: 'index.html',
-		host: true
+		host: true,
+		headers: {
+			// тільки з цими заголовками доступний SharedArrayBuffer,
+			// який використовується в absurd-sql
+			// але, вони накладають обмеження на наш сайт
+			'Cross-Origin-Opener-Policy': 'same-origin',
+			'Cross-Origin-Embedder-Policy': 'require-corp'
+		}
 	},
 	build: {
 		outDir: path('./dist'),

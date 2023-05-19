@@ -3,7 +3,7 @@
     { "roles": ["user", "editor", "admin"] }
     , але на перший погляд, з цим багато мороки, тому тіняю на такі константи: 
 */
-const userRoleTypes = {
+export const userRoleTypes = {
     USER: 10,
     EDITOR: 20,
     ADMIN: 30
@@ -16,7 +16,7 @@ export default userRoleTypes;
 */
 
 // a масив з назвами можна буде отримати таким способом:
-const getRolesNames = (roleType) => {
+export const getRolesNames = (roleType) => {
     let res = [];
     for(let key in userRoleTypes) {
         if(roleType >= userRoleTypes[key]) {
@@ -24,4 +24,11 @@ const getRolesNames = (roleType) => {
         }
     }
     return res;
+}
+export const getRoleTypeByName = (name) => {
+    for(let key in userRoleTypes) {
+        if(key === name.toUpperCase()) {
+            return userRoleTypes[key];
+        }
+    }
 }
